@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>อาหารจันทบุรี — หน้าเว็บโปรไฟล์ธุรกิจ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="ร้าน.jpg" alt="อาหารจันทบุรี">
+    <ul class="menu">
+      <li><a href="#hero">หน้าหลัก</a></li>
+      <li><a href="#products">เมนูอาหาร</a></li>
+      <li><a href="#contact">ติดต่อเรา</a></li>
+      <li><a href="#contact">รีวิวลูกค้า</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <img src="ร้าน.jpg" alt="อาหารจันทบุรี" class="hero-img">
+    <div class="hero-text">
+      <h1>ต้นตำรับอาหาร รสชาติเข้มข้น</h1>
+      <p>เรานำเสนอเมนูอาหารเลิศรสที่ชวนให้ลิ้มลอง</p>
+      <a href="#products" class="btn">ดูเมนูอาหาร</a>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" id="products">
+    <h2 class="section-title">สินค้าของเรา</h2>
+    <div class="cards" id="products-container">
+      <!-- JavaScript จะมาเติมสินค้าให้ตรงนี้ -->
+    </div>
+  </section>
+
+  <!-- ฟอร์มเพิ่มผลิตภัณฑ์ใหม่ -->
+  <section class="add-form-section">
+    <h2 class="section-title">➕ เพิ่มผลิตภัณฑ์ใหม่</h2>
+
+    <form id="add-product-form" class="add-form" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="product-name">ชื่อผลิตภัณฑ์ *</label>
+        <input type="text" id="product-name" name="name" required placeholder="เช่น น้ำพริกเผา">
+      </div>
+
+      <div class="form-group">
+        <label for="product-producer">ผู้ผลิต/กลุ่ม *</label>
+        <input type="text" id="product-producer" name="producer" required placeholder="เช่น กลุ่มแม่บ้านบ้านโคก">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="product-price">ราคา (บาท) *</label>
+          <input type="number" id="product-price" name="price" required min="1" placeholder="60">
+        </div>
+
+        <div class="form-group">
+          <label for="product-category">หมวดหมู่ *</label>
+          <select id="product-category" name="category" required>
+            <option value="">-- เลือกหมวดหมู่ --</option>
+            <option value="อาหาร/เครื่องดื่ม">🍯 อาหาร/เครื่องดื่ม</option>
+            <option value="ผ้า/เครื่องแต่งกาย">👗 ผ้า/เครื่องแต่งกาย</option>
+            <option value="เครื่องประดับ/หัตถกรรม">💍 เครื่องประดับ/หัตถกรรม</option>
+            <option value="สมุนไพร/สุขภาพ">🌿 สมุนไพร/สุขภาพ</option>
+            <option value="ของใช้/ของตกแต่ง">🏺 ของใช้/ของตกแต่ง</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="product-contact">เบอร์ติดต่อ (ถ้ามี)</label>
+        <input type="tel" id="product-contact" name="contact" placeholder="081-234-5678">
+      </div>
+
+      <div class="form-group">
+        <label for="product-image">รูปภาพผลิตภัณฑ์ (jpg, png, webp — ไม่เกิน 5MB)</label>
+        <input type="file" id="product-image" name="image" accept="image/png, image/jpeg, image/jpg, image/webp">
+      </div>
+
+      <button type="submit" class="submit-btn">
+        ➕ เพิ่มผลิตภัณฑ์
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>ติดต่อเรา</h4>
+        <p>โทร 081-234-5678</p>
+        <p>อีเมล indianfoodchan@gmail.com</p>
+        <p>อำเภอเมือง จังหวัดจันทบุรี</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>โซเชียลมีเดีย</h4>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">LINE Official</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>เกี่ยวกับเรา</h4>
+        <p>
+          ร้านอาหารจันทบุรีก่อตั้งขึ้นเพื่อมอบประสบการณ์
+          อาหารแท้ให้กับชาวจันทบุรี ด้วยวัตถุดิบคุณภาพ
+          และสูตรต้นตำรับจากเชฟผู้มีประสบการณ์
+        </p>
+      </div>
+    </div>
+
+    <p class="copyright">
+      © 2026 อาหารจันทบุรี — สงวนลิขสิทธิ์
+    </p>
+  </footer>
+
+  <!-- 🎯 Edit Modal (เพิ่มช่องอัปโหลดรูปภาพแล้ว) -->
+  <div id="edit-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>✏️ แก้ไขผลิตภัณฑ์</h2>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+
+      <form id="edit-form" class="edit-form" enctype="multipart/form-data">
+        <input type="hidden" id="edit-id">
+
+        <div class="form-group">
+          <label>ชื่อผลิตภัณฑ์ *</label>
+          <input type="text" id="edit-name" required>
+        </div>
+
+        <div class="form-group">
+          <label>ผู้ผลิต/กลุ่ม *</label>
+          <input type="text" id="edit-producer" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>ราคา *</label>
+            <input type="number" id="edit-price" required min="1">
+          </div>
+
+          <div class="form-group">
+            <label>หมวดหมู่ *</label>
+            <select id="edit-category" required>
+              <option value="อาหาร/เครื่องดื่ม">🍯 อาหาร/เครื่องดื่ม</option>
+              <option value="ผ้า/เครื่องแต่งกาย">👗 ผ้า/เครื่องแต่งกาย</option>
+              <option value="เครื่องประดับ/หัตถกรรม">💍 เครื่องประดับ/หัตถกรรม</option>
+              <option value="สมุนไพร/สุขภาพ">🌿 สมุนไพร/สุขภาพ</option>
+              <option value="ของใช้/ของตกแต่ง">🏺 ของใช้/ของตกแต่ง</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>เบอร์ติดต่อ</label>
+          <input type="tel" id="edit-contact">
+        </div>
+
+        <!-- 🎯 ช่องอัปโหลดรูปภาพผลิตภัณฑ์สำหรับหน้าแก้ไข -->
+        <div class="form-group">
+          <label for="edit-image">รูปภาพผลิตภัณฑ์ (ถ้าต้องการเปลี่ยน)</label>
+          <input type="file" id="edit-image" name="image" accept="image/png, image/jpeg, image/jpg, image/webp">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="cancel-btn" id="cancel-btn">ยกเลิก</button>
+          <button type="submit" class="submit-btn">💾 บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

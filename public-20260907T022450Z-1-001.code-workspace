@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "public-20260907T022450Z-1-001",
+			"path": "C:/Users/fmsrbru/Downloads/public-20260907T022450Z-1-001"
+		},
+		{
+			"name": "node_modules-20260907T022526Z-1-001",
+			"path": "C:/Users/fmsrbru/Downloads/node_modules-20260907T022526Z-1-001"
+		},
+		{
+			"name": "storage.js",
+			"path": "storage.js"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "public-20260907T022450Z-1-001"
+	}
+}

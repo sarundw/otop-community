@@ -1,0 +1,513 @@
+/* ============================================================
+   STARTER CSS — Workshop Week 2 (Flexbox + Responsive)
+   ============================================================ */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sarabun', 'Segoe UI', 'Tahoma', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Theme Colors */
+:root {
+  --primary: #FB9E09;
+  --accent: #D13704;
+  --light: #F0C88E;
+  --dark: #65463E;
+  --bg: #FAF3E7;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  background: var(--dark);
+  color: white;
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.navbar img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.menu a:hover {
+  color: var(--primary);
+  transition: color 0.2s;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  padding: 3rem 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-img {
+  flex: 1;
+  border-radius: 12px;
+
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.hero-text p {
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   CARD SECTION
+   ============================================================ */
+.cards-section {
+  padding: 3rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 2.5rem;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 250px;
+
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.price {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--dark);
+  color: var(--light);
+  padding: 2.5rem 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h4 {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.footer-col p {
+  margin-bottom: 0.4rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards-section,
+  .hero,
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+}
+
+
+/* กล่องรวมสินค้าทั้งหมด */
+#products-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* การ์ดสินค้าแต่ละอัน */
+.card {
+  width: 250px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* card-header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.category-badge {
+  padding: 0.3rem 0.6rem;
+  background: #F0C88E;
+  color: #65463E;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.producer, .contact {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.delete-btn {
+  padding: 0.5rem 1rem;
+  background: #D13704;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #A82C03;
+}
+.add-form-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #65463E;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 2px solid #F0C88E;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #FB9E09;
+}
+
+.submit-btn {
+  padding: 0.9rem;
+  background: #FB9E09;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #D13704;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image.no-image {
+  background: #F0C88E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #65463E;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+/* Modal Box */
+.modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  color: #65463E;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.modal-close:hover {
+  background: #F0C88E;
+  color: #65463E;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-footer button {
+  flex: 1;
+}
+
+.cancel-btn {
+  padding: 0.9rem;
+  background: white;
+  color: #65463E;
+  border: 2px solid #F0C88E;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cancel-btn:hover {
+  background: #F0C88E;
+}
+
+/* Edit button on card */
+.edit-btn {
+  padding: 0.5rem 1rem;
+  background: #FB9E09;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.edit-btn:hover {
+  background: #D13704;
+}
