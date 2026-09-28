@@ -133,7 +133,7 @@ app.post("/api/products", upload.single("image"), (req, res) => {
   });
 });
 
-// 🎯 PUT (แก้ไขสินค้า - เพิ่มตามสไลด์ 40)
+// PUT (แก้ไขสินค้า)
 app.put("/api/products/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const { name, producer, price, category, contact } = req.body;
@@ -160,7 +160,7 @@ app.put("/api/products/:id", (req, res) => {
   });
 });
 
-// 🎯 DELETE (แก้ไขลบไฟล์รูปภาพออกจากเครื่องด้วย - ตามสไลด์ 41)
+// DELETE (ลบสินค้า)
 app.delete("/api/products/:id", (req, res) => {
   const id = req.params.id;
 
@@ -168,7 +168,6 @@ app.delete("/api/products/:id", (req, res) => {
     if (err) return res.status(500).json({ error: err.message });
     if (!row) return res.status(404).json({ error: "ไม่พบผลิตภัณฑ์" });
 
-    // ลบไฟล์รูปภาพถ้ามีอยู่ในโฟลเดอร์
     if (row.image_path) {
       const filePath = path.join(__dirname, row.image_path);
       if (fs.existsSync(filePath)) {
@@ -184,13 +183,7 @@ app.delete("/api/products/:id", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("🚀 Server running on http://localhost:3000");
-});
-// app.listen(3000, () => {
-//   console.log("🚀 http://localhost:3000");
-// });
-
+// กำหนด PORT เพื่อรองรับ Render
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
